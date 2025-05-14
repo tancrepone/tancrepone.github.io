@@ -1,3 +1,45 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Tancredi Rapone</title>
+  <meta name="description" content="Research by Tancredi Rapone">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,600,700,800' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="shortcut icon" href="./favicon.ico"/>
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="content-language" content="en-us">
+  <meta name="keywords" content="tancredi,rapone,research,growth,development,structural change,demography,uab,bse">
+  <meta name="author" content="Tancredi Rapone">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <a href="index.html">
+        <h2>Tancredi Rapone</h2>
+        <h4>Research</h4>
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="container">
+  <nav class="nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+    </ul>
+  </nav>
+</section>
+
 <section class="sub-page container">
   <h3>Working Papers</h3>
   <hr>
@@ -43,3 +85,29 @@
   </p>
   <div>Draft coming soon.</div>
 </section>
+
+<section class="main container" style="padding-top: 1%">
+  <h3>Work In Progress</h3>
+  <hr>
+  <p><b>Labor Market Power and Human Capital Accumulation</b><br>
+    with <a href="https://www.tarmangue.com/" target="_blank">Tristany Armangue Jubert</a> and 
+    <a href="https://hessjacob.github.io/" target="_blank">Jacob T. Hess</a>
+  </p>
+  <div>
+    <a class="button button-primary" href="slides/labor_market_power_technology.pdf" target="_blank" rel="noopener noreferrer">Slides</a>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll(".abstract-btn").forEach(function(button) {
+    button.addEventListener("click", function(event) {
+      event.preventDefault();
+      var targetId = button.getAttribute("data-target");
+      var abstract = document.getElementById(targetId);
+      abstract.style.display = (abstract.style.display === "none") ? "block" : "none";
+    });
+  });
+</script>
+
+</body>
+</html>
