@@ -744,15 +744,25 @@ Header
 .header {
   margin: 5rem 0;
   text-align: center; }
-  .header .logo {
-    width: 280px;
-    margin: 0 auto;
-    position: relative; }
-    .header .logo h1 {
-      letter-spacing: 2.2rem;
-      text-align: center;
-      font-size: 4rem;
-      font-family: 'Aqua Grotesque','sans-serif'; }
+.header .logo {
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.header .logo h2 {
+  font-family: 'Aqua Grotesque', sans-serif;
+  font-size: 4rem;
+  letter-spacing: 0.05rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
     .header .logo a {
       text-decoration: none;
       color: #222;
