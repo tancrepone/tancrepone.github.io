@@ -743,14 +743,17 @@ Header
 ---------------------------------------------------*/
 .header {
   margin: 5rem 0;
-  text-align: center; }
+  text-align: center;
+}
+
 .header .logo {
-  width: auto;
+  display: inline-block;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .header .logo h2 {
@@ -763,32 +766,41 @@ Header
   text-overflow: ellipsis;
   display: inline-block;
 }
-    .header .logo a {
-      text-decoration: none;
-      color: #222;
-      -webkit-transition: .5s all;
-      -o-transition: .5s all;
-      -moz-transition: .5s all;
-      transition: .5s all; }
-      .header .logo a:hover {
-        color: #CB4335; /*#F5235D;*/
-        -webkit-transition: .5s all;
-        -o-transition: .5s all;
-        -moz-transition: .5s all;
-        transition: .5s all; }
-        .header .logo a:hover h1:after {
-          border-bottom: 4px solid;
-          border-bottom-color: #CB4335; /*#F5235D;*/
-          -webkit-transition: .5s all;
-          -o-transition: .5s all;
-          -moz-transition: .5s all;
-          transition: .5s all; }
-    .header .logo h6 {
-      letter-spacing: 1.19rem;
-      text-transform: uppercase;
-      text-align: center;
-      position: absolute;
-      bottom: -40px; }
+
+.header .logo a {
+  text-decoration: none;
+  color: #222;
+  -webkit-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.header .logo a:hover {
+  color: #CB4335;
+  -webkit-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.header .logo a:hover h1:after {
+  border-bottom: 4px solid;
+  border-bottom-color: #CB4335;
+  -webkit-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.header .logo h6 {
+  letter-spacing: 1.19rem;
+  text-transform: uppercase;
+  text-align: center;
+  position: absolute;
+  bottom: -40px;
+}
+
 
 /*--------------------------------------------------
 Navbar
