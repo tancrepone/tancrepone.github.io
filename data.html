@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Data and Code - Tancredi Rapone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="http://fonts.googleapis.com/css?family=Raleway:400,600,700,800" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="shortcut icon" href="./favicon.ico"/>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html"><h2>Tancredi Rapone</h2></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <section class="container">
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="data.html">Data and Code</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <!-- Page Content -->
+  <section class="sub-page container">
+    <article class="entry-content">
+
+      <p>
+        As part of my research activities, I have spent significant effort analyzing and collecting data from various historical and survey sources. 
+        Here you can find some of the products of those endeavors.
+      </p>
+
+      <hr>
+
+      <h3>1. Copyright Registrations in the United States, 1790–1870</h3>
+      <p>
+        This dataset covers the universe of copyright registrations recorded by the US Library of Congress between 1790 and 1870. The data was scraped from the Library of Congress website and matched to declassified census data. 
+        For details on the data construction and matching methodology, see T. Rapone, <i>"The Production of Knowledge and Culture: The US 1790–1870"</i>, unpublished manuscript (2024).
+      </p>
+
+      <div class="figures">
+        <figure>
+          <img src="img/copyright_map.png" alt="Map of copyright registrations" style="width:100%; max-width:600px; display:block; margin: 20px auto;">
+          <figcaption style="text-align:center;">Figure 1. Spatial distribution of copyright registrations, 1790–1870</figcaption>
+        </figure>
+
+        <figure>
+          <img src="img/copyright_timeseries.png" alt="Time series of copyright registrations" style="width:100%; max-width:600px; display:block; margin: 20px auto;">
+          <figcaption style="text-align:center;">Figure 2. Number of copyright registrations over time</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        <strong>Code:</strong> <a href="code/lc_webscraper.zip" target="_blank">Library of Congress Web Scraper</a>
+      </p>
+
+      <hr>
+
+      <h3>2. Trade Shocks and Regional Exposure, 1970–2020</h3>
+      <p>
+        This dataset measures country-region-year level trade shocks using IPUMS International microdata (covering 82 countries) and SITC4 import classifications. 
+        Industry descriptions from IPUMS were matched to SITC4 codes using the ChatGPT LLM API. The resulting crosswalk is available upon request.
+      </p>
+      <p>
+        Following the methodology of Autor, Dorn, and Hanson (2013), region-level trade shocks are calculated by weighting national changes in imports between 1970–1999 and 2000–2020 by the pre-2000 regional employment shares in import-exposed industries.
+      </p>
+
+      <div class="figures">
+        <figure>
+          <img src="img/trade_shocks_map.png" alt="Map of trade shocks" style="width:100%; max-width:700px; display:block; margin: 20px auto;">
+          <figcaption style="text-align:center;">Figure 3. Regional exposure to trade shocks, global view</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        <strong>Code:</strong> <a href="code/comtrade_trade_shock_tool.zip" target="_blank">Trade Shock Tool using Comtrade API</a>
+      </p>
+
+    </article>
+  </section>
+
+</body>
+</html>
