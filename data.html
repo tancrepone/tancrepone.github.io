@@ -87,24 +87,29 @@
       <hr>
 
       <h3>2. Trade Shocks and Regional Exposure, 1970–2020</h3>
-      <p>
-        This dataset measures country-region-year level trade shocks using IPUMS International microdata (covering 82 countries) and SITC4 import classifications. 
-        Industry descriptions from IPUMS were matched to SITC4 codes using the ChatGPT LLM API. The resulting crosswalk is available upon request.
-      </p>
-      <p>
-        Following the methodology of Autor, Dorn, and Hanson (2013), region-level trade shocks are calculated by weighting national changes in imports between 1970–1999 and 2000–2020 by the pre-2000 regional employment shares in import-exposed industries.
-      </p>
+     <p>
+  This dataset measures country-region-year level trade shocks using IPUMS International microdata (covering 82 countries over 1970-2020). I calculate regional exposure to changing trade patterns by matching individuals in IPUMS International microdata to the SITC4 products most associated to their industry. 
+  This involves creating a crosswalk between the over 10 thousand industry descriptions in the raw IPUMS files to SITC4 codes using the ChatGPT API. The resulting crosswalk is available upon request. To calculate the shocks, I weight changes in global imports of SITC4 products between 1975-1990 and 1990-2000 by the regional shares of employment.
+  Trade data is from <a href="http://www.robertcfeenstra.com/" target="_blank">Robert Feenstra's website</a>. Below I show the resulting distribution of shocks for one country, France, in a single year 1999. 
+</p>
+<p>
+</p>
 
-      <div class="figures">
-        <figure>
-          <img src="img/trade_shocks_map.png" alt="Map of trade shocks" style="width:100%; max-width:700px; display:block; margin: 20px auto;">
-          <figcaption style="text-align:center;">Figure 3. Regional exposure to trade shocks, global view</figcaption>
-        </figure>
-      </div>
+<div class="figures">
+  <figure>
+    <img src="img/map_shocks_france.png" alt="Map of trade shocks in 1999 in France" style="width:100%; max-width:700px; display:block; margin: 20px auto;">
+    <figcaption style="text-align:center;">Figure 3. Regional exposure to trade shocks, France.</figcaption>
+  </figure>
+</div>
 
-      <p>
-        <strong>Code:</strong> <a href="code/comtrade_trade_shock_tool.zip" target="_blank">Trade Shock Tool using Comtrade API</a>
-      </p>
+<!-- Download Dataset Button -->
+<div style="text-align: center; margin-top: 30px;">
+  <a href="data/trade_shocks_dataset.zip" target="_blank" style="text-decoration: none;">
+    <button style="padding: 10px 20px; font-size: 16px; border-radius: 5px; background-color: #007BFF; color: white; border: none; cursor: pointer;">
+      Download Dataset
+    </button>
+  </a>
+</div>
 
     </article>
   </section>
