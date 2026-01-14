@@ -1875,32 +1875,29 @@ Responsive
     padding-left: 220px; } }
 
 /* --------------------------------------------------
-Research page: "Presented at" line under paper buttons
+Research page: paper metadata (title + presented-at)
 ---------------------------------------------------*/
-.presented-at {
-  margin-top: 0.6rem;     /* small gap below buttons */
-  margin-bottom: 2.5rem;  /* matches your default p spacing */
-  font-size: 1.3rem;      /* slightly smaller than body text */
+
+/* Put title and metadata closer together without affecting other pages */
+.sub-page .paper-title {
+  margin-bottom: 0.4rem; /* controls space under the title */
+}
+
+/* Presented-at line styling */
+.sub-page .presented-at {
+  margin-top: 0;         /* removes extra gap above it */
+  margin-bottom: 1.2rem; /* small gap before the buttons */
+  font-size: 1.3rem;
   line-height: 1.6;
   color: #555;
   font-style: italic;
 }
 
-.presented-at a {
+.sub-page .presented-at a {
   color: #555;
   text-decoration: underline;
 }
 
-.presented-at a:hover {
-  color: #CB4335;         /* matches your hover accent */
+.sub-page .presented-at a:hover {
+  color: #CB4335;
 }
-/* Tighten spacing between paper title and "Presented at" */
-.sub-page p > b {
-  display: inline-block;
-  margin-bottom: 0.2rem;
-}
-
-.presented-at {
-  margin-top: 0.2rem;   /* smaller gap below title */
-}
-
