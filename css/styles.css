@@ -1894,4 +1894,13 @@ Research page: "Presented at" line under paper buttons
 .presented-at a:hover {
   color: #CB4335;         /* matches your hover accent */
 }
+/* Tighten spacing between paper title and "Presented at" */
+.sub-page p > b {
+  display: inline-block;
+  margin-bottom: 0.2rem;
+}
+
+.presented-at {
+  margin-top: 0.2rem;   /* smaller gap below title */
+}
 
