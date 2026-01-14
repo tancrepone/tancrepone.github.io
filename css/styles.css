@@ -1873,3 +1873,25 @@ Responsive
         transition: .5s all; }
   .languages {
     padding-left: 220px; } }
+
+/* --------------------------------------------------
+Research page: "Presented at" line under paper buttons
+---------------------------------------------------*/
+.presented-at {
+  margin-top: 0.6rem;     /* small gap below buttons */
+  margin-bottom: 2.5rem;  /* matches your default p spacing */
+  font-size: 1.3rem;      /* slightly smaller than body text */
+  line-height: 1.6;
+  color: #555;
+  font-style: italic;
+}
+
+.presented-at a {
+  color: #555;
+  text-decoration: underline;
+}
+
+.presented-at a:hover {
+  color: #CB4335;         /* matches your hover accent */
+}
+
