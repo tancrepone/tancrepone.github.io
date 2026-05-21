@@ -1901,3 +1901,12 @@ Research page: paper metadata (title + presented-at)
 .sub-page .presented-at a:hover {
   color: #CB4335;
 }
+/* --------------------------------------------------
+Research page: abstracts
+---------------------------------------------------*/
+
+.abstract-content p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
