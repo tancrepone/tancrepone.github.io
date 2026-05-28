@@ -6,7 +6,7 @@
   <title>Data and Code - Tancredi Rapone</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Raleway:400,600,700,800" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="shortcut icon" href="./favicon.ico"/>
@@ -18,23 +18,37 @@
       justify-content: center;
       gap: 40px;
       margin-top: 40px;
+      align-items: flex-start;
     }
 
-    .figure-card {
+    .figure-box {
       flex: 1 1 45%;
       text-align: center;
-      max-width: 600px;
+      max-width: 650px;
     }
 
-    .figure-card img {
+    .figure-box img {
       width: 100%;
       height: auto;
     }
 
-    .figure-card figcaption {
+    .figure-box iframe {
+      width: 100%;
+      height: 460px;
+      border: 0;
+      display: block;
+      margin: 0 auto;
+      background: white;
+    }
+
+    .figure-box figcaption {
       margin-top: 10px;
       font-size: 0.95em;
       text-align: justify;
+    }
+
+    .figure-link {
+      margin-top: 5px;
     }
 
     .download-button {
@@ -51,66 +65,14 @@
       opacity: 0.85;
     }
 
-    .thomas-register-intro {
-      margin-top: 20px;
-      text-align: justify;
-    }
-
-    .thomas-register-highlight {
-      margin: 30px 0;
-      padding: 24px;
-      border: 1px solid #e5e5e5;
-      border-radius: 12px;
-      background: #fafafa;
-    }
-
-    .thomas-register-highlight h4 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1.15em;
-    }
-
-    .thomas-register-highlight p {
-      text-align: justify;
-    }
-
-    .thomas-register-iframe {
-      width: 100%;
-      border: 0;
-      border-radius: 8px;
-      background: white;
-      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
-    }
-
-    .thomas-register-caption {
-      margin-top: 12px;
-      font-size: 0.95em;
-      text-align: justify;
-    }
-
-    .thomas-register-links {
-      text-align: center;
-      margin-top: 30px;
-      margin-bottom: 20px;
-    }
-
-    .project-note {
-      font-size: 0.95em;
-      text-align: justify;
-      color: #444;
-    }
-
     @media screen and (max-width: 800px) {
-      .figures {
-        gap: 24px;
-      }
-
-      .figure-card {
+      .figure-box {
         flex: 1 1 100%;
+        max-width: 100%;
       }
 
-      .thomas-register-iframe {
-        height: 520px !important;
+      .figure-box iframe {
+        height: 520px;
       }
     }
   </style>
@@ -166,14 +128,14 @@
       <div class="figures">
 
         <!-- Figure 1: Map -->
-        <figure class="figure-card">
+        <figure class="figure-box">
           <img src="img/books_counties.png" alt="Map of copyright registrations">
           <figcaption>
             <strong>Figure 1.</strong> Spatial distribution of copyright registrations, 1790–1870.
             Red represents popular culture publications, blue represents scientific or educational publications.
             Source: Author's computation using Library of Congress data.
           </figcaption>
-          <div style="margin-top: 5px;">
+          <div class="figure-link">
             <a href="https://github.com/tancrepone/tancrepone.github.io/blob/main/data/WIP_data.csv?raw=true" target="_blank" rel="noopener noreferrer">Download Data</a>
             &nbsp;|&nbsp;
             <a href="https://github.com/tancrepone/tancrepone.github.io/blob/main/docs/readme_spatial.pdf?raw=true" target="_blank" rel="noopener noreferrer">README</a>
@@ -181,12 +143,12 @@
         </figure>
 
         <!-- Figure 2: Time Series -->
-        <figure class="figure-card">
+        <figure class="figure-box">
           <img src="img/BooksYear.png" alt="Time series of copyright registrations">
           <figcaption>
             <strong>Figure 2.</strong> Number of copyright registrations over time.
           </figcaption>
-          <div style="margin-top: 5px;">
+          <div class="figure-link">
             <a href="https://github.com/tancrepone/tancrepone.github.io/blob/main/data/books_year_count.csv?raw=true" target="_blank" rel="noopener noreferrer">Download Data</a>
           </div>
         </figure>
@@ -216,26 +178,29 @@
         Geo level 2 datasets are available upon request.
       </p>
 
-      <div class="figures" style="align-items: flex-start;">
+      <div class="figures">
 
-        <figure style="flex: 1; max-width: 600px; text-align: center;">
+        <!-- Figure 3: France Trade Shocks -->
+        <figure class="figure-box">
           <img src="img/map_shocks_france.png" alt="Map of trade shocks in 1999 in France"
                style="width:100%; height:400px; object-fit: contain; display:block; margin: 0 auto;">
-          <figcaption style="margin-top: 10px;">
+          <figcaption>
             <strong>Figure 3.</strong> Regional exposure to trade shocks, France.
           </figcaption>
         </figure>
 
-        <figure style="flex: 1; max-width: 600px; text-align: center;">
+        <!-- Figure 4: Global Trade Shocks -->
+        <figure class="figure-box">
           <img src="img/map_trade_shocks_world.png" alt="Map of global trade shocks"
                style="width:100%; height:400px; object-fit: contain; display:block; margin: 0 auto;">
-          <figcaption style="margin-top: 10px;">
+          <figcaption>
             <strong>Figure 4.</strong> Global regional exposure to trade shocks.
           </figcaption>
         </figure>
 
       </div>
 
+      <!-- Download Dataset Button -->
       <div style="text-align: center; margin-top: 30px;">
         <a href="https://github.com/tancrepone/tancrepone.github.io/raw/main/data/trade_shocks_dataset.csv" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
           <button class="download-button">
@@ -248,74 +213,58 @@
 
       <h3>3. The Thomas Register as Data</h3>
 
-      <p class="thomas-register-intro">
+      <p style="text-align: justify;">
         This dataset digitizes the Thomas Register, one of the central directories of American industrial firms,
-        suppliers, and product categories. The register offers a new way to study the geography of production,
-        the specialization of cities, and the organization of industrial knowledge in the United States.
-        The figures below provide a first look at the data: where listings were concentrated across states,
-        and which cities appear unusually specialized in particular product categories.
+        suppliers, and product categories. The register makes it possible to study the geography of production,
+        the specialization of cities, and the organization of industrial supply networks at a fine level of detail.
+        Below I show two exploratory views of the data: the distribution of listings across U.S. states, and a
+        city-product specialization matrix that highlights which cities appear unusually concentrated in particular
+        product categories.
       </p>
 
-      <p class="project-note">
-        The full digitized dataset contains firm-level listings with product categories, locations, firm names,
-        addresses, and register ratings. I am making these data available for researchers interested in economic history,
-        business history, industrial geography, urban specialization, and the historical organization of supply chains.
-      </p>
+      <div class="figures">
 
-      <!-- Thomas Register Figure 5: State Map -->
-      <div class="thomas-register-highlight">
-        <h4>Industrial Geography: Listings by State</h4>
+        <!-- Figure 5: Thomas Register State Map -->
+        <figure class="figure-box">
+          <iframe
+            src="thomas_register/01_state_choropleth.html"
+            title="Thomas Register listings by state"
+            loading="lazy">
+          </iframe>
 
-        <p>
-          This interactive map shows the spatial distribution of Thomas Register listings across U.S. states.
-          Darker states contain more firm-product listings. Hover over a state to see the number of listings,
-          unique firms, and product categories represented in the digitized register.
-        </p>
+          <figcaption>
+            <strong>Figure 5.</strong> Spatial distribution of Thomas Register listings by state.
+            Darker states contain more firm-product listings. Hover over a state to see the number of listings,
+            unique firms, and product categories represented in the digitized data.
+            Source: Author's digitization of the Thomas Register.
+          </figcaption>
 
-        <iframe
-          src="thomas_register/01_state_choropleth.html"
-          title="Thomas Register listings by state"
-          class="thomas-register-iframe"
-          style="height: 650px;"
-          loading="lazy">
-        </iframe>
+          <div class="figure-link">
+            <a href="https://github.com/tancrepone/tancrepone.github.io/raw/main/data/thomas_register_full_cleaned.csv" target="_blank" rel="noopener noreferrer">Download Data</a>
+          </div>
+        </figure>
 
-        <p class="thomas-register-caption">
-          <strong>Figure 5.</strong> Distribution of Thomas Register listings by state.
-          Source: Author's digitization of the Thomas Register.
-        </p>
-      </div>
+        <!-- Figure 6: Thomas Register Specialization Matrix -->
+        <figure class="figure-box">
+          <iframe
+            src="thomas_register/04_city_product_specialization_heatmap.html"
+            title="Thomas Register city-product specialization matrix"
+            loading="lazy">
+          </iframe>
 
-      <!-- Thomas Register Figure 6: Specialization Matrix -->
-      <div class="thomas-register-highlight">
-        <h4>City-Product Specialization Matrix</h4>
+          <figcaption>
+            <strong>Figure 6.</strong> City-product specialization matrix for major Thomas Register cities and product categories.
+            Rows are cities and columns are product categories. Brighter cells indicate that a city is more specialized
+            in a product category than expected given the overall size of that city and the overall frequency of the
+            product category in the register.
+            Source: Author's digitization of the Thomas Register.
+          </figcaption>
 
-        <p>
-          The matrix below highlights city-level specialization. Rows are major cities and columns are major product categories.
-          Brighter cells indicate that a city is more specialized in a product category than expected given the overall size
-          of that city and the overall frequency of the product category in the register.
-        </p>
+          <div class="figure-link">
+            <a href="thomas_register/04_city_product_specialization_heatmap.html" target="_blank" rel="noopener noreferrer">Open Interactive Figure</a>
+          </div>
+        </figure>
 
-        <iframe
-          src="thomas_register/04_city_product_specialization_heatmap.html"
-          title="Thomas Register city-product specialization matrix"
-          class="thomas-register-iframe"
-          style="height: 760px;"
-          loading="lazy">
-        </iframe>
-
-        <p class="thomas-register-caption">
-          <strong>Figure 6.</strong> City-product specialization matrix for major Thomas Register cities and product categories.
-          Source: Author's digitization of the Thomas Register.
-        </p>
-      </div>
-
-      <div class="thomas-register-links">
-        <a href="https://github.com/tancrepone/tancrepone.github.io/raw/main/data/thomas_register_full_cleaned.csv" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-          <button class="download-button">
-            Download Thomas Register Data
-          </button>
-        </a>
       </div>
 
       <p>
@@ -328,3 +277,4 @@
 
 </body>
 </html>
+
