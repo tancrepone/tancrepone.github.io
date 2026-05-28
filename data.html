@@ -214,10 +214,10 @@
       <h3>3. The Thomas Register as Data</h3>
 
       <p style="text-align: justify;">
-        This dataset digitizes the Thomas Register, one of the central directories of American industrial firms,
+        This dataset digitizes the 1905 edition of the Thomas Register, one of the central directories of American industrial firms,
         suppliers, and product categories. The register makes it possible to study the geography of production,
-        the specialization of cities, and the organization of industrial supply networks at a fine level of detail.
-        Below I show two exploratory views of the data: the distribution of listings across U.S. states, and a
+        the specialization of cities, and the organization of industrial supply networks at a fine level of detail at the height of the US Industrial Revolution.
+        Below I show two exploratory views of the data: the distribution of listings across U.S. cities, and a
         city-product specialization matrix that highlights which cities appear unusually concentrated in particular
         product categories.
       </p>
@@ -227,15 +227,14 @@
         <!-- Figure 5: Thomas Register State Map -->
         <figure class="figure-box">
           <iframe
-            src="thomas_register/01_state_choropleth.html"
+            src="thomas_register/04_city_map.html"
             title="Thomas Register listings by state"
             loading="lazy">
           </iframe>
 
           <figcaption>
-            <strong>Figure 5.</strong> Spatial distribution of Thomas Register listings by state.
-            Darker states contain more firm-product listings. Hover over a state to see the number of listings,
-            unique firms, and product categories represented in the digitized data.
+            <strong>Figure 5.</strong> Spatial distribution of Thomas Register listings by city
+            Larger circles contain more listings.
             Source: Author's digitization of the Thomas Register.
           </figcaption>
 
@@ -247,7 +246,7 @@
         <!-- Figure 6: Thomas Register Specialization Matrix -->
         <figure class="figure-box">
           <iframe
-            src="thomas_register/04_city_product_specialization_heatmap.html"
+            src="thomas_register/04_city_product_specialization.html"
             title="Thomas Register city-product specialization matrix"
             loading="lazy">
           </iframe>
