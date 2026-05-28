@@ -5,10 +5,115 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Data and Code - Tancredi Rapone</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="http://fonts.googleapis.com/css?family=Raleway:400,600,700,800" rel="stylesheet" type="text/css">
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="shortcut icon" href="./favicon.ico"/>
+
+  <style>
+    .figures {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .figure-card {
+      flex: 1 1 45%;
+      text-align: center;
+      max-width: 600px;
+    }
+
+    .figure-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .figure-card figcaption {
+      margin-top: 10px;
+      font-size: 0.95em;
+      text-align: justify;
+    }
+
+    .download-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      background-color: #000000;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .download-button:hover {
+      opacity: 0.85;
+    }
+
+    .thomas-register-intro {
+      margin-top: 20px;
+      text-align: justify;
+    }
+
+    .thomas-register-highlight {
+      margin: 30px 0;
+      padding: 24px;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      background: #fafafa;
+    }
+
+    .thomas-register-highlight h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.15em;
+    }
+
+    .thomas-register-highlight p {
+      text-align: justify;
+    }
+
+    .thomas-register-iframe {
+      width: 100%;
+      border: 0;
+      border-radius: 8px;
+      background: white;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+    }
+
+    .thomas-register-caption {
+      margin-top: 12px;
+      font-size: 0.95em;
+      text-align: justify;
+    }
+
+    .thomas-register-links {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .project-note {
+      font-size: 0.95em;
+      text-align: justify;
+      color: #444;
+    }
+
+    @media screen and (max-width: 800px) {
+      .figures {
+        gap: 24px;
+      }
+
+      .figure-card {
+        flex: 1 1 100%;
+      }
+
+      .thomas-register-iframe {
+        height: 520px !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -16,12 +121,12 @@
   <!-- Header -->
   <header class="header">
     <div class="container">
-    <div class="logo">
-      <a href="index.html">
-        <h2>Tancredi Rapone</h2>
-        <h4>Data and Code</h4>
-      </a>
-    </div>
+      <div class="logo">
+        <a href="index.html">
+          <h2>Tancredi Rapone</h2>
+          <h4>Data and Code</h4>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -43,85 +148,180 @@
     <article class="entry-content">
 
       <p>
-        As part of my research activities, I have spent significant effort analyzing and collecting data from various historical and survey sources. 
+        As part of my research activities, I have spent significant effort analyzing and collecting data from various historical and survey sources.
         Here you can find some of the products of those endeavors.
       </p>
 
       <hr>
 
       <h3>1. Copyright Registrations in the United States, 1790–1870</h3>
+
       <p>
-        This dataset covers the universe of copyright registrations recorded by the US Library of Congress between 1790 and 1870 (LOC, 2020). The data was scraped from the Library of Congress website and matched to declassified census data. 
-        For details on the data construction and matching methodology, see T. Rapone, <i>"The Production of Knowledge and Culture: The US 1790–1870"</i>, unpublished manuscript (2024).
+        This dataset covers the universe of copyright registrations recorded by the US Library of Congress between 1790 and 1870 (LOC, 2020).
+        The data was scraped from the Library of Congress website and matched to declassified census data.
+        For details on the data construction and matching methodology, see T. Rapone,
+        <i>"The Production of Knowledge and Culture: The US 1790–1870"</i>, unpublished manuscript (2024).
       </p>
-<div class="figures" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 40px;">
 
-<!-- Figure 1: Map -->
-<figure style="flex: 1 1 45%; text-align: center; max-width: 600px;">
-  <img src="img/books_counties.png" alt="Map of copyright registrations" style="width:100%; height:auto;">
-  <figcaption style="margin-top: 10px; font-size: 0.95em; text-align: justify;">
-    <strong>Figure 1.</strong> Spatial distribution of copyright registrations, 1790–1870. Red represents popular culture publications, blue represents scientific or educational publications. Source: Author's computation using Library of Congress data.
-  </figcaption>
-  <div style="margin-top: 5px;">
-    <a href="https://github.com/tancrepone/tancrepone.github.io/blob/main/data/WIP_data.csv?raw=true" target="_blank" rel="noopener noreferrer">Download Data</a>
-    &nbsp;|&nbsp;
-    <a href="https://github.com/tancrepone/tancrepone.github.io/blob/main/docs/readme_spatial.pdf?raw=true" target="_blank" rel="noopener noreferrer">README</a>
-  </div>
-</figure>
+      <div class="figures">
 
+        <!-- Figure 1: Map -->
+        <figure class="figure-card">
+          <img src="img/books_counties.png" alt="Map of copyright registrations">
+          <figcaption>
+            <strong>Figure 1.</strong> Spatial distribution of copyright registrations, 1790–1870.
+            Red represents popular culture publications, blue represents scientific or educational publications.
+            Source: Author's computation using Library of Congress data.
+          </figcaption>
+          <div style="margin-top: 5px;">
+            <a href="https://github.com/tancrepone/tancrepone.github.io/blob/main/data/WIP_data.csv?raw=true" target="_blank" rel="noopener noreferrer">Download Data</a>
+            &nbsp;|&nbsp;
+            <a href="https://github.com/tancrepone/tancrepone.github.io/blob/main/docs/readme_spatial.pdf?raw=true" target="_blank" rel="noopener noreferrer">README</a>
+          </div>
+        </figure>
 
-  <!-- Figure 2: Time Series -->
-  <figure style="flex: 1 1 45%; text-align: center; max-width: 600px;">
-    <img src="img/BooksYear.png" alt="Time series of copyright registrations" style="width:100%; height:auto;">
-    <figcaption style="margin-top: 10px; font-size: 0.95em; text-align: justify;">
-      <strong>Figure 2.</strong> Number of copyright registrations over time.
-    </figcaption>
-    <div style="margin-top: 5px;">
-      <a href="https://github.com/tancrepone/tancrepone.github.io/blob/main/data/books_year_count.csv?raw=true" target="_blank" rel="noopener noreferrer">Download Data</a>
-    </div>
-  </figure>
+        <!-- Figure 2: Time Series -->
+        <figure class="figure-card">
+          <img src="img/BooksYear.png" alt="Time series of copyright registrations">
+          <figcaption>
+            <strong>Figure 2.</strong> Number of copyright registrations over time.
+          </figcaption>
+          <div style="margin-top: 5px;">
+            <a href="https://github.com/tancrepone/tancrepone.github.io/blob/main/data/books_year_count.csv?raw=true" target="_blank" rel="noopener noreferrer">Download Data</a>
+          </div>
+        </figure>
 
-</div>
+      </div>
 
       <p>
-<strong>Code:</strong> <a href="https://github.com/tancrepone/tancrepone.github.io/blob/main/code/LOC_scripts.zip?raw=true" target="_blank" rel="noopener noreferrer">Library of Congress Web Scraper</a>
+        <strong>Code:</strong>
+        <a href="https://github.com/tancrepone/tancrepone.github.io/blob/main/code/LOC_scripts.zip?raw=true" target="_blank" rel="noopener noreferrer">Library of Congress Web Scraper</a>
       </p>
 
       <hr>
 
       <h3>2. Trade Shocks and Regional Exposure, 1970–2020</h3>
-     <p style="text-align: justify;">
-  This dataset measures country-region-year level trade shocks using IPUMS International microdata (covering 31 countries and 40 years over 1970-2020). I calculate regional exposure to changing trade patterns by matching individuals in IPUMS International microdata to the SITC4 products most associated to their industry. 
-  This involves creating a crosswalk between the over 10 thousand industry descriptions in the raw IPUMS files to SITC4 codes using the ChatGPT API. The resulting crosswalk is available upon request. To calculate the shocks, I weight changes in global imports of SITC4 products between 1975-1990 and 1990-2000 by the regional shares of employment.
-  Trade data is from <a href="http://www.robertcfeenstra.com/" target="_blank">Robert Feenstra's website</a>. Below I show the resulting distribution of shocks for one country, France, in a single year 1999. Geo level 2 datasets are available upon request. 
-</p>
-<p>
-</p>
 
-<div class="figures" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; align-items: flex-start;">
+      <p style="text-align: justify;">
+        This dataset measures country-region-year level trade shocks using IPUMS International microdata
+        (covering 31 countries and 40 years over 1970-2020).
+        I calculate regional exposure to changing trade patterns by matching individuals in IPUMS International microdata
+        to the SITC4 products most associated to their industry.
+        This involves creating a crosswalk between the over 10 thousand industry descriptions in the raw IPUMS files
+        to SITC4 codes using the ChatGPT API. The resulting crosswalk is available upon request.
+        To calculate the shocks, I weight changes in global imports of SITC4 products between 1975-1990 and 1990-2000
+        by the regional shares of employment.
+        Trade data is from <a href="http://www.robertcfeenstra.com/" target="_blank" rel="noopener noreferrer">Robert Feenstra's website</a>.
+        Below I show the resulting distribution of shocks for one country, France, in a single year 1999.
+        Geo level 2 datasets are available upon request.
+      </p>
 
-  <figure style="flex: 1; max-width: 600px; text-align: center;">
-    <img src="img/map_shocks_france.png" alt="Map of trade shocks in 1999 in France" 
-         style="width:100%; height:400px; object-fit: contain; display:block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px;">Figure 3. Regional exposure to trade shocks, France.</figcaption>
-  </figure>
+      <div class="figures" style="align-items: flex-start;">
 
-  <figure style="flex: 1; max-width: 600px; text-align: center;">
-    <img src="img/map_trade_shocks_world.png" alt="Map of global trade shocks" 
-         style="width:100%; height:400px; object-fit: contain; display:block; margin: 0 auto;">
-    <figcaption style="margin-top: 10px;">Figure 4. Global regional exposure to trade shocks.</figcaption>
-  </figure>
+        <figure style="flex: 1; max-width: 600px; text-align: center;">
+          <img src="img/map_shocks_france.png" alt="Map of trade shocks in 1999 in France"
+               style="width:100%; height:400px; object-fit: contain; display:block; margin: 0 auto;">
+          <figcaption style="margin-top: 10px;">
+            <strong>Figure 3.</strong> Regional exposure to trade shocks, France.
+          </figcaption>
+        </figure>
 
-</div>
+        <figure style="flex: 1; max-width: 600px; text-align: center;">
+          <img src="img/map_trade_shocks_world.png" alt="Map of global trade shocks"
+               style="width:100%; height:400px; object-fit: contain; display:block; margin: 0 auto;">
+          <figcaption style="margin-top: 10px;">
+            <strong>Figure 4.</strong> Global regional exposure to trade shocks.
+          </figcaption>
+        </figure>
 
-<!-- Download Dataset Button -->
-<div style="text-align: center; margin-top: 30px;">
-  <a href="https://github.com/tancrepone/tancrepone.github.io/raw/main/data/trade_shocks_dataset.csv" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-    <button style="padding: 10px 20px; font-size: 16px; border-radius: 5px; background-color: #000000; color: white; border: none; cursor: pointer;">
-      Download Dataset
-    </button>
-  </a>
-</div>
+      </div>
+
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="https://github.com/tancrepone/tancrepone.github.io/raw/main/data/trade_shocks_dataset.csv" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+          <button class="download-button">
+            Download Dataset
+          </button>
+        </a>
+      </div>
+
+      <hr>
+
+      <h3>3. The Thomas Register as Data</h3>
+
+      <p class="thomas-register-intro">
+        This dataset digitizes the Thomas Register, one of the central directories of American industrial firms,
+        suppliers, and product categories. The register offers a new way to study the geography of production,
+        the specialization of cities, and the organization of industrial knowledge in the United States.
+        The figures below provide a first look at the data: where listings were concentrated across states,
+        and which cities appear unusually specialized in particular product categories.
+      </p>
+
+      <p class="project-note">
+        The full digitized dataset contains firm-level listings with product categories, locations, firm names,
+        addresses, and register ratings. I am making these data available for researchers interested in economic history,
+        business history, industrial geography, urban specialization, and the historical organization of supply chains.
+      </p>
+
+      <!-- Thomas Register Figure 5: State Map -->
+      <div class="thomas-register-highlight">
+        <h4>Industrial Geography: Listings by State</h4>
+
+        <p>
+          This interactive map shows the spatial distribution of Thomas Register listings across U.S. states.
+          Darker states contain more firm-product listings. Hover over a state to see the number of listings,
+          unique firms, and product categories represented in the digitized register.
+        </p>
+
+        <iframe
+          src="thomas_register/01_state_choropleth.html"
+          title="Thomas Register listings by state"
+          class="thomas-register-iframe"
+          style="height: 650px;"
+          loading="lazy">
+        </iframe>
+
+        <p class="thomas-register-caption">
+          <strong>Figure 5.</strong> Distribution of Thomas Register listings by state.
+          Source: Author's digitization of the Thomas Register.
+        </p>
+      </div>
+
+      <!-- Thomas Register Figure 6: Specialization Matrix -->
+      <div class="thomas-register-highlight">
+        <h4>City-Product Specialization Matrix</h4>
+
+        <p>
+          The matrix below highlights city-level specialization. Rows are major cities and columns are major product categories.
+          Brighter cells indicate that a city is more specialized in a product category than expected given the overall size
+          of that city and the overall frequency of the product category in the register.
+        </p>
+
+        <iframe
+          src="thomas_register/04_city_product_specialization_heatmap.html"
+          title="Thomas Register city-product specialization matrix"
+          class="thomas-register-iframe"
+          style="height: 760px;"
+          loading="lazy">
+        </iframe>
+
+        <p class="thomas-register-caption">
+          <strong>Figure 6.</strong> City-product specialization matrix for major Thomas Register cities and product categories.
+          Source: Author's digitization of the Thomas Register.
+        </p>
+      </div>
+
+      <div class="thomas-register-links">
+        <a href="https://github.com/tancrepone/tancrepone.github.io/raw/main/data/thomas_register_full_cleaned.csv" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+          <button class="download-button">
+            Download Thomas Register Data
+          </button>
+        </a>
+      </div>
+
+      <p>
+        <strong>Code:</strong>
+        <a href="https://github.com/tancrepone/tancrepone.github.io" target="_blank" rel="noopener noreferrer">Website repository</a>
+      </p>
 
     </article>
   </section>
