@@ -27,28 +27,46 @@
       max-width: 650px;
     }
 
+    .figure-box-wide {
+      flex: 1 1 100%;
+      text-align: center;
+      max-width: 1150px;
+    }
+
     .figure-box img {
       width: 100%;
       height: auto;
     }
 
-    .figure-box iframe {
+    .figure-box iframe,
+    .figure-box-wide iframe {
       width: 100%;
-      height: 460px;
       border: 0;
       display: block;
       margin: 0 auto;
       background: white;
     }
 
-    .figure-box figcaption {
+    .figure-box iframe {
+      height: 460px;
+    }
+
+    .figure-box-wide iframe {
+      height: 760px;
+      border: 1px solid #d8dee8;
+      border-radius: 6px;
+    }
+
+    .figure-box figcaption,
+    .figure-box-wide figcaption {
       margin-top: 10px;
       font-size: 0.95em;
       text-align: justify;
     }
 
     .figure-link {
-      margin-top: 5px;
+      margin-top: 8px;
+      line-height: 1.6;
     }
 
     .download-button {
@@ -66,13 +84,18 @@
     }
 
     @media screen and (max-width: 800px) {
-      .figure-box {
+      .figure-box,
+      .figure-box-wide {
         flex: 1 1 100%;
         max-width: 100%;
       }
 
       .figure-box iframe {
         height: 520px;
+      }
+
+      .figure-box-wide iframe {
+        height: 780px;
       }
     }
   </style>
@@ -116,40 +139,34 @@
 
       <hr>
 
-      <h3>1. Copyright Registrations in the United States, 1790–1870</h3>
+      <h3>1. American Copyright Registrations and Authors’ 1850 County Residences</h3>
 
-      <p>
-        This dataset covers the universe of copyright registrations recorded by the US Library of Congress between 1790 and 1870 (LOC, 2020).
-        The data was scraped from the Library of Congress website and matched to declassified census data.
-        For details on the data construction and matching methodology, see T. Rapone,
-        <i>"The Production of Knowledge and Culture: The US 1790–1870"</i>, unpublished manuscript (2024).
+      <p style="text-align: justify;">
+        This interactive map explores the geography of early American copyright registrations. I link copyright title-page records
+        to likely 1850 census county residences of the people associated with those registrations. The map allows users to browse
+        total registrations, registrations per capita, and estimated topic categories derived from title-page text. A companion
+        time-series view shows the long-run growth of book registrations, both in total counts and normalized by population.
       </p>
 
       <div class="figures">
 
-        <!-- Figure 1: Map -->
-        <figure class="figure-box">
-          <img src="img/books_counties.png" alt="Map of copyright registrations">
-          <figcaption>
-            <strong>Figure 1.</strong> Spatial distribution of copyright registrations, 1790–1870.
-            Red represents popular culture publications, blue represents scientific or educational publications.
-            Source: Author's computation using Library of Congress data.
-          </figcaption>
-          <div class="figure-link">
-            <a href="https://github.com/tancrepone/tancrepone.github.io/blob/main/data/WIP_data.csv?raw=true" target="_blank" rel="noopener noreferrer">Download Data</a>
-            &nbsp;|&nbsp;
-            <a href="https://github.com/tancrepone/tancrepone.github.io/blob/main/docs/readme_spatial.pdf?raw=true" target="_blank" rel="noopener noreferrer">README</a>
-          </div>
-        </figure>
+        <figure class="figure-box-wide">
+          <iframe
+            src="LOC_copyright_website/interactive_loc_county_topic_map.html"
+            title="Interactive map of American copyright registrations and authors’ 1850 county residences"
+            loading="lazy">
+          </iframe>
 
-        <!-- Figure 2: Time Series -->
-        <figure class="figure-box">
-          <img src="img/BooksYear.png" alt="Time series of copyright registrations">
           <figcaption>
-            <strong>Figure 2.</strong> Number of copyright registrations over time.
+            <strong>Figure 1.</strong> Interactive map of American copyright registrations and authors’ 1850 county residences.
+            County shading shows copyright title-page records linked to likely 1850 census county residences. The map also lets users
+            browse estimated subject categories and title-page examples from the Library of Congress.
           </figcaption>
+
           <div class="figure-link">
-            <a href="https://github.com/tancrepone/tancrepone.github.io/blob/main/data/books_year_count.csv?raw=true" target="_blank" rel="noopener noreferrer">Download Data</a>
+            <a href="LOC_copyright_website/interactive_loc_county_topic_map.html" target="_blank" rel="noopener noreferrer">Open Interactive Map</a>
+            &nbsp;|&nbsp;
+            <a href="https://www.dropbox.com/scl/fo/rwz4p08pvg3zgpye2w72t/AG7N_aP8un2-gpXoozcstnE?rlkey=hs8w9uvaditq0eqbopubfvrhe&dl=0" target="_blank" rel="noopener noreferrer">Download Data and Website Package</a>
           </div>
         </figure>
 
@@ -157,82 +174,32 @@
 
       <p>
         <strong>Code:</strong>
-        <a href="https://github.com/tancrepone/tancrepone.github.io/blob/main/code/LOC_scripts.zip?raw=true" target="_blank" rel="noopener noreferrer">Library of Congress Web Scraper</a>
+        <a href="https://github.com/tancrepone/tancrepone.github.io" target="_blank" rel="noopener noreferrer">Website repository</a>
       </p>
 
       <hr>
 
-      <h3>2. Trade Shocks and Regional Exposure, 1970–2020</h3>
-
-      <p style="text-align: justify;">
-        This dataset measures country-region-year level trade shocks using IPUMS International microdata
-        (covering 31 countries and 40 years over 1970-2020).
-        I calculate regional exposure to changing trade patterns by matching individuals in IPUMS International microdata
-        to the SITC4 products most associated to their industry.
-        This involves creating a crosswalk between the over 10 thousand industry descriptions in the raw IPUMS files
-        to SITC4 codes using the ChatGPT API. The resulting crosswalk is available upon request.
-        To calculate the shocks, I weight changes in global imports of SITC4 products between 1975-1990 and 1990-2000
-        by the regional shares of employment.
-        Trade data is from <a href="http://www.robertcfeenstra.com/" target="_blank" rel="noopener noreferrer">Robert Feenstra's website</a>.
-        Below I show the resulting distribution of shocks for one country, France, in a single year 1999.
-        Geo level 2 datasets are available upon request.
-      </p>
-
-      <div class="figures">
-
-        <!-- Figure 3: France Trade Shocks -->
-        <figure class="figure-box">
-          <img src="img/map_shocks_france.png" alt="Map of trade shocks in 1999 in France"
-               style="width:100%; height:400px; object-fit: contain; display:block; margin: 0 auto;">
-          <figcaption>
-            <strong>Figure 3.</strong> Regional exposure to trade shocks, France.
-          </figcaption>
-        </figure>
-
-        <!-- Figure 4: Global Trade Shocks -->
-        <figure class="figure-box">
-          <img src="img/map_trade_shocks_world.png" alt="Map of global trade shocks"
-               style="width:100%; height:400px; object-fit: contain; display:block; margin: 0 auto;">
-          <figcaption>
-            <strong>Figure 4.</strong> Global regional exposure to trade shocks.
-          </figcaption>
-        </figure>
-
-      </div>
-
-      <!-- Download Dataset Button -->
-      <div style="text-align: center; margin-top: 30px;">
-        <a href="https://github.com/tancrepone/tancrepone.github.io/raw/main/data/trade_shocks_dataset.csv" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-          <button class="download-button">
-            Download Dataset
-          </button>
-        </a>
-      </div>
-
-      <hr>
-
-      <h3>3. Product by Firm Data: The Thomas Register in 1905</h3>
+      <h3>2. Product by Firm Data: The Thomas Register in 1905</h3>
 
       <p style="text-align: justify;">
         This dataset digitizes the 1905 edition of the Thomas Register, one of the central directories of American industrial firms,
-        suppliers, and product categories. I extract product by firm level data for the year 1905 from the scanned PDF of the Thomas Register, a popular buyer's guide featuring all major and minor manufacturing firms in the US producing over 2,900 products across over 75,000 firms.
-        Below I show two exploratory views of the data: the distribution of listings across U.S. cities, and a
-        city-product specialization matrix that highlights which cities appear unusually concentrated in particular
-        product categories.
+        suppliers, and product categories. I extract product-by-firm level data for the year 1905 from the scanned PDF of the Thomas Register,
+        a popular buyer's guide featuring major and minor manufacturing firms in the United States producing over 2,900 products across
+        more than 75,000 firms. Below I show two exploratory views of the data: the distribution of listings across U.S. cities, and a
+        city-product specialization matrix that highlights which cities appear unusually concentrated in particular product categories.
       </p>
 
       <div class="figures">
 
-        <!-- Figure 5: Thomas Register State Map -->
         <figure class="figure-box">
           <iframe
             src="thomas_register/04_city_map.html"
-            title="Thomas Register listings by state"
+            title="Thomas Register listings by city"
             loading="lazy">
           </iframe>
 
           <figcaption>
-            <strong>Figure 5.</strong> Spatial distribution of Thomas Register listings by city
+            <strong>Figure 2.</strong> Spatial distribution of Thomas Register listings by city.
             Larger circles contain more listings.
             Source: Author's digitization of the Thomas Register.
           </figcaption>
@@ -242,7 +209,6 @@
           </div>
         </figure>
 
-        <!-- Figure 6: Thomas Register Specialization Matrix -->
         <figure class="figure-box">
           <iframe
             src="thomas_register/04_city_product_specialization.html"
@@ -251,7 +217,7 @@
           </iframe>
 
           <figcaption>
-            <strong>Figure 6.</strong> City-product specialization matrix for major Thomas Register cities and product categories.
+            <strong>Figure 3.</strong> City-product specialization matrix for major Thomas Register cities and product categories.
             Rows are cities and columns are product categories. Brighter cells indicate that a city is more specialized
             in a product category than expected given the overall size of that city and the overall frequency of the
             product category in the register.
@@ -270,9 +236,54 @@
         <a href="https://github.com/tancrepone/tancrepone.github.io" target="_blank" rel="noopener noreferrer">Website repository</a>
       </p>
 
+      <hr>
+
+      <h3>3. Trade Shocks and Regional Exposure, 1970–2020</h3>
+
+      <p style="text-align: justify;">
+        This dataset measures country-region-year level trade shocks using IPUMS International microdata
+        covering 31 countries and 40 years over 1970–2020.
+        I calculate regional exposure to changing trade patterns by matching individuals in IPUMS International microdata
+        to the SITC4 products most associated with their industry.
+        This involves creating a crosswalk between over 10,000 industry descriptions in the raw IPUMS files
+        and SITC4 codes using the ChatGPT API. The resulting crosswalk is available upon request.
+        To calculate the shocks, I weight changes in global imports of SITC4 products between 1975–1990 and 1990–2000
+        by regional shares of employment.
+        Trade data is from <a href="http://www.robertcfeenstra.com/" target="_blank" rel="noopener noreferrer">Robert Feenstra's website</a>.
+        Below I show the resulting distribution of shocks for one country, France, in a single year, 1999.
+        Geo level 2 datasets are available upon request.
+      </p>
+
+      <div class="figures">
+
+        <figure class="figure-box">
+          <img src="img/map_shocks_france.png" alt="Map of trade shocks in 1999 in France"
+               style="width:100%; height:400px; object-fit: contain; display:block; margin: 0 auto;">
+          <figcaption>
+            <strong>Figure 4.</strong> Regional exposure to trade shocks, France.
+          </figcaption>
+        </figure>
+
+        <figure class="figure-box">
+          <img src="img/map_trade_shocks_world.png" alt="Map of global trade shocks"
+               style="width:100%; height:400px; object-fit: contain; display:block; margin: 0 auto;">
+          <figcaption>
+            <strong>Figure 5.</strong> Global regional exposure to trade shocks.
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="https://github.com/tancrepone/tancrepone.github.io/raw/main/data/trade_shocks_dataset.csv" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+          <button class="download-button">
+            Download Dataset
+          </button>
+        </a>
+      </div>
+
     </article>
   </section>
 
 </body>
 </html>
-
