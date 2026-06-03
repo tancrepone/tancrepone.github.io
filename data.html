@@ -27,42 +27,21 @@
       max-width: 650px;
     }
 
-    .figure-box-wide {
-      flex: 1 1 100%;
-      text-align: center;
-      width: min(96vw, 1500px);
-      max-width: none;
-      margin-left: 50%;
-      transform: translateX(-50%);
-    }
-
     .figure-box img {
       width: 100%;
       height: auto;
     }
 
-    .figure-box iframe,
-    .figure-box-wide iframe {
+    .figure-box iframe {
       width: 100%;
+      height: 460px;
       border: 0;
       display: block;
       margin: 0 auto;
       background: white;
     }
 
-    .figure-box iframe {
-      height: 460px;
-    }
-
-    .figure-box-wide iframe {
-      height: 86vh;
-      min-height: 820px;
-      border: 1px solid #d8dee8;
-      border-radius: 6px;
-    }
-
-    .figure-box figcaption,
-    .figure-box-wide figcaption {
+    .figure-box figcaption {
       margin-top: 10px;
       font-size: 0.95em;
       text-align: justify;
@@ -71,43 +50,65 @@
     .figure-link {
       margin-top: 8px;
       line-height: 1.6;
-    }
-
-    .download-button {
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 5px;
-      background-color: #000000;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    .download-button:hover {
-      opacity: 0.85;
+      text-align: center;
     }
 
     .entry-content p {
       text-align: justify;
     }
 
+    /*
+      Full-bleed interactive copyright map.
+      This breaks the iframe out of the narrow text column and lets it span
+      almost the full browser width.
+    */
+    .copyright-map-fullbleed {
+      width: 96vw;
+      max-width: 96vw;
+      margin-left: calc(50% - 48vw);
+      margin-right: calc(50% - 48vw);
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .copyright-map-fullbleed iframe {
+      width: 100%;
+      height: 88vh;
+      min-height: 900px;
+      border: 1px solid #d8dee8;
+      border-radius: 6px;
+      display: block;
+      margin: 0 auto;
+      background: white;
+    }
+
+    .copyright-map-fullbleed figcaption {
+      max-width: 1150px;
+      margin: 12px auto 0 auto;
+      font-size: 0.95em;
+      text-align: justify;
+    }
+
     @media screen and (max-width: 800px) {
-      .figure-box,
-      .figure-box-wide {
+      .figure-box {
         flex: 1 1 100%;
         max-width: 100%;
-        width: 100%;
-        margin-left: 0;
-        transform: none;
       }
 
       .figure-box iframe {
         height: 520px;
       }
 
-      .figure-box-wide iframe {
+      .copyright-map-fullbleed {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .copyright-map-fullbleed iframe {
         height: 90vh;
-        min-height: 760px;
+        min-height: 780px;
       }
     }
   </style>
@@ -160,31 +161,38 @@
         time-series view shows the long-run growth of book registrations, both in total counts and normalized by population.
       </p>
 
-      <div class="figures">
-        <figure class="figure-box-wide">
-          <iframe
-            src="LOC_copyright_website/interactive_loc_county_topic_map.html"
-            aria-label="Interactive map of American copyright registrations and authors’ 1850 county residences"
-            loading="lazy">
-          </iframe>
+    </article>
+  </section>
 
-          <figcaption>
-            <strong>Figure 1.</strong> Interactive map of American copyright registrations and authors’ 1850 county residences.
-            County shading shows copyright title-page records linked to likely 1850 census county residences. The map also lets users
-            browse estimated subject categories and title-page examples from the Library of Congress.
-          </figcaption>
+  <!-- Full-width copyright map section -->
+  <section class="copyright-map-fullbleed">
+    <figure>
+      <iframe
+        src="LOC_copyright_website/interactive_loc_county_topic_map.html"
+        aria-label="Interactive map of American copyright registrations and authors’ 1850 county residences"
+        loading="lazy">
+      </iframe>
 
-          <div class="figure-link">
-            <a href="LOC_copyright_website/interactive_loc_county_topic_map.html" target="_blank" rel="noopener noreferrer">
-              <strong>Open Full-Screen Interactive Map</strong>
-            </a>
-            &nbsp;|&nbsp;
-            <a href="https://www.dropbox.com/scl/fo/rwz4p08pvg3zgpye2w72t/AG7N_aP8un2-gpXoozcstnE?rlkey=hs8w9uvaditq0eqbopubfvrhe&dl=0" target="_blank" rel="noopener noreferrer">
-              Download Data and Website Package
-            </a>
-          </div>
-        </figure>
+      <figcaption>
+        <strong>Figure 1.</strong> Interactive map of American copyright registrations and authors’ 1850 county residences.
+        County shading shows copyright title-page records linked to likely 1850 census county residences. The map also lets users
+        browse estimated subject categories and title-page examples from the Library of Congress.
+      </figcaption>
+
+      <div class="figure-link">
+        <a href="LOC_copyright_website/interactive_loc_county_topic_map.html" target="_blank" rel="noopener noreferrer">
+          <strong>Open Full-Screen Interactive Map</strong>
+        </a>
+        &nbsp;|&nbsp;
+        <a href="https://www.dropbox.com/scl/fo/rwz4p08pvg3zgpye2w72t/AG7N_aP8un2-gpXoozcstnE?rlkey=hs8w9uvaditq0eqbopubfvrhe&dl=0" target="_blank" rel="noopener noreferrer">
+          Download Data and Website Package
+        </a>
       </div>
+    </figure>
+  </section>
+
+  <section class="sub-page container">
+    <article class="entry-content">
 
       <p>
         <strong>Code:</strong>
@@ -288,11 +296,11 @@
 
       </div>
 
-<div class="figure-link" style="text-align: center; margin-top: 20px;">
-  <a href="https://github.com/tancrepone/tancrepone.github.io/raw/main/data/trade_shocks_dataset.csv" target="_blank" rel="noopener noreferrer">
-    Download Data
-  </a>
-</div>
+      <div class="figure-link" style="margin-top: 20px;">
+        <a href="https://github.com/tancrepone/tancrepone.github.io/raw/main/data/trade_shocks_dataset.csv" target="_blank" rel="noopener noreferrer">
+          Download Data
+        </a>
+      </div>
 
     </article>
   </section>
