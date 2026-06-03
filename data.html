@@ -30,7 +30,10 @@
     .figure-box-wide {
       flex: 1 1 100%;
       text-align: center;
-      max-width: 1150px;
+      width: min(96vw, 1500px);
+      max-width: none;
+      margin-left: 50%;
+      transform: translateX(-50%);
     }
 
     .figure-box img {
@@ -52,7 +55,8 @@
     }
 
     .figure-box-wide iframe {
-      height: 760px;
+      height: 86vh;
+      min-height: 820px;
       border: 1px solid #d8dee8;
       border-radius: 6px;
     }
@@ -83,11 +87,18 @@
       opacity: 0.85;
     }
 
+    .entry-content p {
+      text-align: justify;
+    }
+
     @media screen and (max-width: 800px) {
       .figure-box,
       .figure-box-wide {
         flex: 1 1 100%;
         max-width: 100%;
+        width: 100%;
+        margin-left: 0;
+        transform: none;
       }
 
       .figure-box iframe {
@@ -95,7 +106,8 @@
       }
 
       .figure-box-wide iframe {
-        height: 780px;
+        height: 90vh;
+        min-height: 760px;
       }
     }
   </style>
@@ -141,7 +153,7 @@
 
       <h3>1. American Copyright Registrations and Authors’ 1850 County Residences</h3>
 
-      <p style="text-align: justify;">
+      <p>
         This interactive map explores the geography of early American copyright registrations. I link copyright title-page records
         to likely 1850 census county residences of the people associated with those registrations. The map allows users to browse
         total registrations, registrations per capita, and estimated topic categories derived from title-page text. A companion
@@ -149,11 +161,10 @@
       </p>
 
       <div class="figures">
-
         <figure class="figure-box-wide">
           <iframe
             src="LOC_copyright_website/interactive_loc_county_topic_map.html"
-            title="Interactive map of American copyright registrations and authors’ 1850 county residences"
+            aria-label="Interactive map of American copyright registrations and authors’ 1850 county residences"
             loading="lazy">
           </iframe>
 
@@ -164,12 +175,15 @@
           </figcaption>
 
           <div class="figure-link">
-            <a href="LOC_copyright_website/interactive_loc_county_topic_map.html" target="_blank" rel="noopener noreferrer">Open Interactive Map</a>
+            <a href="LOC_copyright_website/interactive_loc_county_topic_map.html" target="_blank" rel="noopener noreferrer">
+              <strong>Open Full-Screen Interactive Map</strong>
+            </a>
             &nbsp;|&nbsp;
-            <a href="https://www.dropbox.com/scl/fo/rwz4p08pvg3zgpye2w72t/AG7N_aP8un2-gpXoozcstnE?rlkey=hs8w9uvaditq0eqbopubfvrhe&dl=0" target="_blank" rel="noopener noreferrer">Download Data and Website Package</a>
+            <a href="https://www.dropbox.com/scl/fo/rwz4p08pvg3zgpye2w72t/AG7N_aP8un2-gpXoozcstnE?rlkey=hs8w9uvaditq0eqbopubfvrhe&dl=0" target="_blank" rel="noopener noreferrer">
+              Download Data and Website Package
+            </a>
           </div>
         </figure>
-
       </div>
 
       <p>
@@ -181,7 +195,7 @@
 
       <h3>2. Product by Firm Data: The Thomas Register in 1905</h3>
 
-      <p style="text-align: justify;">
+      <p>
         This dataset digitizes the 1905 edition of the Thomas Register, one of the central directories of American industrial firms,
         suppliers, and product categories. I extract product-by-firm level data for the year 1905 from the scanned PDF of the Thomas Register,
         a popular buyer's guide featuring major and minor manufacturing firms in the United States producing over 2,900 products across
@@ -240,7 +254,7 @@
 
       <h3>3. Trade Shocks and Regional Exposure, 1970–2020</h3>
 
-      <p style="text-align: justify;">
+      <p>
         This dataset measures country-region-year level trade shocks using IPUMS International microdata
         covering 31 countries and 40 years over 1970–2020.
         I calculate regional exposure to changing trade patterns by matching individuals in IPUMS International microdata
