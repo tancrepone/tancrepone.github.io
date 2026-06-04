@@ -17,7 +17,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 40px;
-      margin-top: 40px;
+      margin-top: 36px;
       align-items: flex-start;
     }
 
@@ -41,7 +41,8 @@
       background: white;
     }
 
-    .figure-box figcaption {
+    .figure-box figcaption,
+    .copyright-map-box figcaption {
       margin-top: 10px;
       font-size: 0.95em;
       text-align: justify;
@@ -57,36 +58,26 @@
       text-align: justify;
     }
 
-    /*
-      Full-bleed interactive copyright map.
-      This breaks the iframe out of the narrow text column and lets it span
-      almost the full browser width.
-    */
-    .copyright-map-fullbleed {
-      width: 96vw;
-      max-width: 96vw;
-      margin-left: calc(50% - 48vw);
-      margin-right: calc(50% - 48vw);
-      margin-top: 40px;
+    .copyright-map-box {
+      width: 100%;
+      max-width: 100%;
+      margin: 28px auto 0 auto;
       text-align: center;
     }
 
-    .copyright-map-fullbleed iframe {
+    .copyright-map-box figure {
+      margin: 0;
       width: 100%;
-      height: 88vh;
-      min-height: 900px;
+    }
+
+    .copyright-map-box iframe {
+      width: 100%;
+      height: 760px;
       border: 1px solid #d8dee8;
       border-radius: 6px;
       display: block;
       margin: 0 auto;
       background: white;
-    }
-
-    .copyright-map-fullbleed figcaption {
-      max-width: 1150px;
-      margin: 12px auto 0 auto;
-      font-size: 0.95em;
-      text-align: justify;
     }
 
     @media screen and (max-width: 800px) {
@@ -99,16 +90,9 @@
         height: 520px;
       }
 
-      .copyright-map-fullbleed {
-        width: 100%;
-        max-width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-      }
-
-      .copyright-map-fullbleed iframe {
+      .copyright-map-box iframe {
         height: 90vh;
-        min-height: 780px;
+        min-height: 760px;
       }
     }
   </style>
@@ -161,38 +145,31 @@
         time-series view shows the long-run growth of book registrations, both in total counts and normalized by population.
       </p>
 
-    </article>
-  </section>
+      <div class="copyright-map-box">
+        <figure>
+          <iframe
+            src="LOC_copyright_website/interactive_loc_county_topic_map.html"
+            aria-label="Interactive map of American copyright registrations and authors’ 1850 county residences"
+            loading="lazy">
+          </iframe>
 
-  <!-- Full-width copyright map section -->
-  <section class="copyright-map-fullbleed">
-    <figure>
-      <iframe
-        src="LOC_copyright_website/interactive_loc_county_topic_map.html"
-        aria-label="Interactive map of American copyright registrations and authors’ 1850 county residences"
-        loading="lazy">
-      </iframe>
+          <figcaption>
+            <strong>Figure 1.</strong> Interactive map of American copyright registrations and authors’ 1850 county residences.
+            County shading shows copyright title-page records linked to likely 1850 census county residences. The map also lets users
+            browse estimated subject categories and title-page examples from the Library of Congress.
+          </figcaption>
 
-      <figcaption>
-        <strong>Figure 1.</strong> Interactive map of American copyright registrations and authors’ 1850 county residences.
-        County shading shows copyright title-page records linked to likely 1850 census county residences. The map also lets users
-        browse estimated subject categories and title-page examples from the Library of Congress.
-      </figcaption>
-
-      <div class="figure-link">
-        <a href="LOC_copyright_website/interactive_loc_county_topic_map.html" target="_blank" rel="noopener noreferrer">
-          <strong>Open Full-Screen Interactive Map</strong>
-        </a>
-        &nbsp;|&nbsp;
-        <a href="https://www.dropbox.com/scl/fo/rwz4p08pvg3zgpye2w72t/AG7N_aP8un2-gpXoozcstnE?rlkey=hs8w9uvaditq0eqbopubfvrhe&dl=0" target="_blank" rel="noopener noreferrer">
-          Download Data and Website Package
-        </a>
+          <div class="figure-link">
+            <a href="LOC_copyright_website/interactive_loc_county_topic_map.html" target="_blank" rel="noopener noreferrer">
+              <strong>Open Full-Screen Interactive Map</strong>
+            </a>
+            &nbsp;|&nbsp;
+            <a href="https://www.dropbox.com/scl/fo/rwz4p08pvg3zgpye2w72t/AG7N_aP8un2-gpXoozcstnE?rlkey=hs8w9uvaditq0eqbopubfvrhe&dl=0" target="_blank" rel="noopener noreferrer">
+              Download Data and Website Package
+            </a>
+          </div>
+        </figure>
       </div>
-    </figure>
-  </section>
-
-  <section class="sub-page container">
-    <article class="entry-content">
 
       <p>
         <strong>Code:</strong>
