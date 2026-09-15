@@ -1,8 +1,4 @@
-A restrained “featured paper” card works well here: a dark label, subtle background, and strong left border make the JMP immediately visible without looking commercial.
 
-Replace your complete `research.html` with:
-
-```html
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -50,9 +46,7 @@ Replace your complete `research.html` with:
   >
 
   <style>
-    /*
-     * Featured job-market paper
-     */
+    /* Featured job-market paper */
     .featured-paper {
       box-sizing: border-box;
       width: 100%;
@@ -88,9 +82,7 @@ Replace your complete `research.html` with:
       margin-bottom: 22px;
     }
 
-    /*
-     * Other papers
-     */
+    /* Paper spacing */
     .paper-item {
       margin-bottom: 45px;
     }
@@ -103,9 +95,7 @@ Replace your complete `research.html` with:
       margin-top: 0;
     }
 
-    /*
-     * Abstracts
-     */
+    /* Expandable messages and abstracts */
     .abstract-content {
       margin-top: 22px;
       padding: 20px 24px;
@@ -117,9 +107,7 @@ Replace your complete `research.html` with:
       margin: 0;
     }
 
-    /*
-     * Mobile layout
-     */
+    /* Mobile layout */
     @media only screen and (max-width: 768px) {
       .featured-paper {
         padding: 24px 20px;
@@ -165,7 +153,7 @@ Replace your complete `research.html` with:
     </nav>
   </section>
 
-  <!-- Working papers -->
+  <!-- Working Papers -->
   <main class="sub-page container">
     <h3>Working Papers</h3>
     <hr>
@@ -182,6 +170,7 @@ Replace your complete `research.html` with:
 
       <p class="presented-at">
         Presented at:
+
         <a
           href="https://cyprusconferences.org/ewmes2025/"
           target="_blank"
@@ -334,6 +323,7 @@ Replace your complete `research.html` with:
 
       <p class="presented-at">
         Presented at:
+
         <a
           href="https://grp.cepr.org/events/xi-workshop-structural-transformation-and-macroeconomic-dynamics"
           target="_blank"
@@ -351,11 +341,23 @@ Replace your complete `research.html` with:
         >Abstract</a>
 
         <a
+          class="button button-primary draft-btn"
+          href="#draft4"
+          data-target="draft4"
+          aria-controls="draft4"
+          aria-expanded="false"
+        >PDF</a>
+
+        <a
           class="button button-primary"
           href="slides/ls_automation_data_sources-19.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >Slides</a>
+      </div>
+
+      <div id="draft4" class="abstract-content" hidden>
+        <p>Draft coming soon.</p>
       </div>
 
       <div id="abstract4" class="abstract-content" hidden>
@@ -456,10 +458,9 @@ Replace your complete `research.html` with:
     </article>
   </section>
 
-  <!-- Work in progress -->
+  <!-- Work in Progress -->
   <section class="sub-page container">
     <h3>Work in Progress</h3>
-    <hr>
 
     <article class="paper-item">
       <p class="paper-title">
@@ -492,21 +493,25 @@ Replace your complete `research.html` with:
   </section>
 
   <script>
-    document.querySelectorAll(".abstract-btn").forEach(function (button) {
-      button.addEventListener("click", function (event) {
-        event.preventDefault();
+    function setUpToggleButtons(selector, closedLabel, openLabel) {
+      document.querySelectorAll(selector).forEach(function (button) {
+        button.addEventListener("click", function (event) {
+          event.preventDefault();
 
-        var targetId = button.getAttribute("data-target");
-        var abstract = document.getElementById(targetId);
-        var isOpening = abstract.hidden;
+          var targetId = button.getAttribute("data-target");
+          var content = document.getElementById(targetId);
+          var isOpening = content.hidden;
 
-        abstract.hidden = !isOpening;
-        button.setAttribute("aria-expanded", String(isOpening));
-        button.textContent = isOpening ? "Hide Abstract" : "Abstract";
+          content.hidden = !isOpening;
+          button.setAttribute("aria-expanded", String(isOpening));
+          button.textContent = isOpening ? openLabel : closedLabel;
+        });
       });
-    });
+    }
+
+    setUpToggleButtons(".abstract-btn", "Abstract", "Hide Abstract");
+    setUpToggleButtons(".draft-btn", "PDF", "Hide Message");
   </script>
 
 </body>
 </html>
-```
