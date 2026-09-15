@@ -1,173 +1,512 @@
+A restrained “featured paper” card works well here: a dark label, subtle background, and strong left border make the JMP immediately visible without looking commercial.
+
+Replace your complete `research.html` with:
+
+```html
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Tancredi Rapone</title>
-  <meta name="description" content="Research by Tancredi Rapone">
+
+  <title>Research | Tancredi Rapone</title>
+
+  <meta
+    name="description"
+    content="Research by Tancredi Rapone on economic growth, structural transformation, firm dynamics, and long-run development."
+  >
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en-us">
+  <meta name="author" content="Tancredi Rapone">
 
-  <!-- IMPORTANT: use https -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic" rel="stylesheet" type="text/css">
+  <meta
+    name="keywords"
+    content="Tancredi Rapone, research, economics, growth, development, structural transformation, firm dynamics, UAB, BSE"
+  >
 
-  <!-- IMPORTANT: correct relative path -->
+  <!-- Fonts -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic"
+  >
+
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
 
-  <link rel="shortcut icon" href="favicon.ico"/>
-  <meta name="robots" content="index, follow" />
-  <meta http-equiv="content-language" content="en-us">
-  <meta name="keywords" content="tancredi,rapone,research,growth,development,structural change,demography,uab,bse">
-  <meta name="author" content="Tancredi Rapone">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  >
+
+  <style>
+    /*
+     * Featured job-market paper
+     */
+    .featured-paper {
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0 0 50px;
+      padding: 32px 36px;
+      background-color: #f7f7f5;
+      border: 1px solid #d8d8d4;
+      border-left: 6px solid #222;
+    }
+
+    .jmp-label {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 7px 12px;
+      color: #fff;
+      background-color: #222;
+      font-family: "Raleway", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .featured-paper .paper-title {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.25em;
+      line-height: 1.5;
+    }
+
+    .featured-paper .presented-at {
+      margin-bottom: 22px;
+    }
+
+    /*
+     * Other papers
+     */
+    .paper-item {
+      margin-bottom: 45px;
+    }
+
+    .paper-title {
+      margin-bottom: 10px;
+    }
+
+    .presented-at {
+      margin-top: 0;
+    }
+
+    /*
+     * Abstracts
+     */
+    .abstract-content {
+      margin-top: 22px;
+      padding: 20px 24px;
+      background-color: #fafafa;
+      border-left: 3px solid #ccc;
+    }
+
+    .abstract-content p {
+      margin: 0;
+    }
+
+    /*
+     * Mobile layout
+     */
+    @media only screen and (max-width: 768px) {
+      .featured-paper {
+        padding: 24px 20px;
+      }
+
+      .featured-paper .paper-title {
+        font-size: 1.1em;
+      }
+
+      .abstract-content {
+        padding: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<header class="header">
-  <div class="container">
-    <div class="logo">
-      <a href="index.html">
-        <h2>Tancredi Rapone</h2>
-        <h4>Research</h4>
-      </a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <h2>Tancredi Rapone</h2>
+          <h4>Research</h4>
+        </a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<section class="container">
-  <nav class="nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="data.html">Data and Code</a></li>
-    </ul>
-  </nav>
-</section>
+  <!-- Navigation -->
+  <section class="container">
+    <nav class="nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="research.html" aria-current="page">Research</a>
+        </li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="data.html">Data and Code</a></li>
+      </ul>
+    </nav>
+  </section>
 
-<!-- =======================
-        WORKING PAPERS
-======================= -->
-<section class="sub-page container">
-  <h3>Working Papers</h3>
-  <hr>
+  <!-- Working papers -->
+  <main class="sub-page container">
+    <h3>Working Papers</h3>
+    <hr>
 
-  <p class="paper-title"><b>From Agriculture to Services: Development without Industrialization</b></p>
-  <p class="presented-at">
-    Presented at:
-    <a href="https://cyprusconferences.org/ewmes2025/" target="_blank" rel="noopener noreferrer">EWMES 2025</a>,
-    <a href="https://asesec.org/simposio-de-la-asociacion-espanola-de-economia/" target="_blank" rel="noopener noreferrer">SAEe 2025</a>,
-    <a href="https://sites.google.com/pujolasfons.com/ideaalumniconference/home" target="_blank" rel="noopener noreferrer">IDEA Alumni Conference 2025</a>,
-    <a href="https://www.amse-aixmarseille.fr/en/events/25th-journées-louis-andré-gérard-varet" target="_blank" rel="noopener noreferrer">LAGV 2026</a>.
-  </p>
+    <!-- Job Market Paper -->
+    <article class="featured-paper">
+      <span class="jmp-label">Job Market Paper</span>
 
-  <div>
-    <a class="button button-primary abstract-btn" href="#" data-target="abstract1">Abstract</a>
-    <a class="button button-primary" href="papers/SC_services_paper.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
-    <a class="button button-primary" href="slides/SC_services.pdf" target="_blank" rel="noopener noreferrer">Slides</a>
-  </div>
+      <p class="paper-title">
+        <strong>
+          From Agriculture to Services: Development without Industrialization
+        </strong>
+      </p>
 
-  <div id="abstract1" class="abstract-content" style="display:none;">
-    <p>
-Does bypassing industrialization change the service economy that emerges? I argue that it does. I show that large-scale manufacturing builds managerial and technical capabilities that subsequently support high-skill producer services. Across countries, larger historical manufacturing peaks are followed by greater expansion of high-skill producer services and faster GDP-per-capita growth. Using U.S. counties, I show that this legacy is concentrated in high-throughput manufacturing: a 10-percentage-point increase in the manufacturing peak induced by national high-throughput growth raises the high-skill producer-service share of private-service employment by 2.83 percentage points in 2000, about 45 percent of the cross-county mean. I quantify the mechanism in a growth model where firm scale induces firms to formalize recurring organizational problems and the resulting knowledge can diffuse across firms and sectors. Calibrated to the U.S. transition, variation in manufacturing history generates 98 percent of the observed cross-country gradient in the high-skill producer-service share of services. In a lower-middle-income policy economy, manufacturing subsidies perform poorly; persistent gains instead arise when reforms that allow firms to grow are combined with investments in skills and organizational formalization. 
-    </p>
-  </div>
+      <p class="presented-at">
+        Presented at:
+        <a
+          href="https://cyprusconferences.org/ewmes2025/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >EWMES 2025</a>,
 
-  <br>
+        <a
+          href="https://asesec.org/simposio-de-la-asociacion-espanola-de-economia/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >SAEe 2025</a>,
 
-  <p><b>The Production of Knowledge and Culture: The US 1790–1870</b></p>
-  <div>
-    <a class="button button-primary abstract-btn" href="#" data-target="abstract2">Abstract</a>
-    <a class="button button-primary" href="papers/KnowledgeCulture_paper.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
-    <a class="button button-primary" href="slides/Knowledge_Culture.pdf" target="_blank" rel="noopener noreferrer">Slides</a>
-  </div>
+        <a
+          href="https://sites.google.com/pujolasfons.com/ideaalumniconference/home"
+          target="_blank"
+          rel="noopener noreferrer"
+        >IDEA Alumni Conference 2025</a>, and
 
-  <div id="abstract2" class="abstract-content" style="display:none;">
-    <p>
-      This paper uses new data on copyright registration title pages from the Library of Congress (LOC) to analyze the intellectual and cultural development of the United States over 1790–1870. I construct national time series of book production over this period which show an uptake in per-capita terms in 1830, well before the start of the Second Industrial Revolution and the era of "knowledge based progress". Matching authors to locations (at the county level) using declassified census data reveals that the spatial distribution of intellectual production in the early 19th century is strongly correlated with inventive activity over 1860–1940 and the evolution of the manufacturing sector. Identification is based on a shift-share type instrument exploiting the large internal migration patterns occurring in this time period.
-    </p>
-  </div>
+        <a
+          href="https://www.amse-aixmarseille.fr/en/events/25th-journées-louis-andré-gérard-varet"
+          target="_blank"
+          rel="noopener noreferrer"
+        >LAGV 2026</a>.
+      </p>
 
-  <br>
+      <div class="paper-links">
+        <a
+          class="button button-primary abstract-btn"
+          href="#abstract1"
+          data-target="abstract1"
+          aria-controls="abstract1"
+          aria-expanded="false"
+        >Abstract</a>
 
-<p class="paper-title"><b>The Fall and Rise of Labor: Substitutability and Scalability during the Technological Revolution</b><br>
-  with <a href="https://r-santaeulalia.net/" target="_blank" rel="noopener noreferrer">Raul Santaeulalia-Llopis</a> and
-  <a href="https://kevinhorourke.com/" target="_blank" rel="noopener noreferrer">Kevin O'Rourke</a>
-</p>
+        <a
+          class="button button-primary"
+          href="papers/SC_services_paper.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >PDF</a>
 
-<p class="presented-at">
-  Presented at:
-  <a href="https://grp.cepr.org/events/xi-workshop-structural-transformation-and-macroeconomic-dynamics" target="_blank" rel="noopener noreferrer">XI Workshop on Structural Transformation and Macroeconomic Dynamics</a>.
-</p>
+        <a
+          class="button button-primary"
+          href="slides/SC_services.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Slides</a>
+      </div>
 
-<div>
-  <a class="button button-primary abstract-btn" href="#" data-target="abstract4">Abstract</a>
-  <a class="button button-primary" href="slides/ls_automation_data_sources-19.pdf" target="_blank" rel="noopener noreferrer">Slides</a>
-</div>
+      <div id="abstract1" class="abstract-content" hidden>
+        <p>
+          Does bypassing industrialization change the service economy that
+          emerges? I argue that it does. I show that large-scale manufacturing
+          builds managerial and technical capabilities that subsequently
+          support high-skill producer services. Across countries, larger
+          historical manufacturing peaks are followed by greater expansion of
+          high-skill producer services and faster GDP-per-capita growth. Using
+          U.S. counties, I show that this legacy is concentrated in
+          high-throughput manufacturing: a 10-percentage-point increase in the
+          manufacturing peak induced by national high-throughput growth raises
+          the high-skill producer-service share of private-service employment
+          by 2.83 percentage points in 2000, about 45 percent of the
+          cross-county mean. I quantify the mechanism in a growth model where
+          firm scale induces firms to formalize recurring organizational
+          problems and the resulting knowledge can diffuse across firms and
+          sectors. Calibrated to the U.S. transition, variation in
+          manufacturing history generates 98 percent of the observed
+          cross-country gradient in the high-skill producer-service share of
+          services. In a lower-middle-income policy economy, manufacturing
+          subsidies perform poorly; persistent gains instead arise when
+          reforms that allow firms to grow are combined with investments in
+          skills and organizational formalization.
+        </p>
+      </div>
+    </article>
 
-  <div id="abstract4" class="abstract-content" style="display:none;">
-    <p>
-      We study how technological innovations reshaped U.S. labor markets between 1860 and 1950 by combining over 20 million digitized newspaper pages from the Library of Congress with occupational data from the U.S. Census starting in 1860. Using equipment advertisements, we track the arrival of 123 major technologies across time and space, and measure local labor market responses through job ads and shifts in occupational structure. We find that new technologies trigger the rapid decline of some occupations (substitution) and the gradual rise of others (scaling). While short-run disruptions are uneven, the long-run effects are broadly positive: wages, employment, and productivity tend to rise in counties that adapt more quickly to changing labor demand. A half-century later, these counties are richer, have lower unemployment, and more polarized labor markets. Our findings offer historical perspective on modern fears of automation-driven job loss, suggesting that technological disruptions have historically reallocated labor rather than replaced it.
-    </p>
-  </div>
-</section>
+    <!-- Working Paper 2 -->
+    <article class="paper-item">
+      <p class="paper-title">
+        <strong>
+          The Production of Knowledge and Culture: The US 1790–1870
+        </strong>
+      </p>
 
-<!-- =======================
-        PUBLICATIONS
-======================= -->
-<section class="sub-page container">
-  <h3>Publications</h3>
-  <hr>
+      <div class="paper-links">
+        <a
+          class="button button-primary abstract-btn"
+          href="#abstract2"
+          data-target="abstract2"
+          aria-controls="abstract2"
+          aria-expanded="false"
+        >Abstract</a>
 
-  <p>
-    <b>Firm Dynamics, Monopsony, and Aggregate Productivity Differences</b><br>
-    with <a href="https://www.tarmangue.com/" target="_blank" rel="noopener noreferrer">Tristany Armangue Jubert</a> and
-    <a href="https://www.alessandroruggieri.com/" target="_blank" rel="noopener noreferrer">Alessandro Ruggieri</a>
-    <br>
-    <em>Review of Economic Dynamics</em> (2025), 101321.
-  </p>
+        <a
+          class="button button-primary"
+          href="papers/KnowledgeCulture_paper.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >PDF</a>
 
-  <div>
-    <a class="button button-primary abstract-btn" href="#" data-target="abstract3">Abstract</a>
-    <a class="button button-primary" href="https://www.dropbox.com/scl/fi/mgkft8ctmq21f8osq548r/AJRR_draft-main.pdf?rlkey=0kvkrxwdegvp6ljhv3uvyeg3k&dl=0">PDF</a>
-    <a class="button button-primary" href="slides/dynamic_misallocation_labor_market_power.pdf" target="_blank" rel="noopener noreferrer">Slides</a>
-  </div>
+        <a
+          class="button button-primary"
+          href="slides/Knowledge_Culture.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Slides</a>
+      </div>
 
-  <div id="abstract3" class="abstract-content" style="display:none;">
-    <p>
-      This paper studies how labor market power affects firm dynamics and aggregate productivity. We build a dynamic model of neoclassical monopsony with occupational choice, firm growth, and productivity-enhancing technology adoption. Labor market power lowers efficiency and leads to aggregate output losses by distorting the allocation of labor, entrepreneurship, and innovation decisions. The model is consistent with cross-country evidence of higher life-cycle firm growth and higher productivity investment in more competitive labor markets and can explain up to 42% of differences in income per capita across countries. We find that about one-third of the losses are attributable to a distorted selection of entrepreneurs and a lack of innovation, suggesting that efficiency losses may be greater than those estimated by previous studies.
-    </p>
-  </div>
-</section>
+      <div id="abstract2" class="abstract-content" hidden>
+        <p>
+          This paper uses new data on copyright registration title pages from
+          the Library of Congress (LOC) to analyze the intellectual and
+          cultural development of the United States over 1790–1870. I
+          construct national time series of book production over this period
+          which show an uptake in per-capita terms in 1830, well before the
+          start of the Second Industrial Revolution and the era of
+          “knowledge-based progress.” Matching authors to locations at the
+          county level using declassified census data reveals that the spatial
+          distribution of intellectual production in the early nineteenth
+          century is strongly correlated with inventive activity over
+          1860–1940 and the evolution of the manufacturing sector.
+          Identification is based on a shift-share-type instrument exploiting
+          the large internal migration patterns occurring during this period.
+        </p>
+      </div>
+    </article>
 
-<!-- =======================
-       WORK IN PROGRESS
-======================= -->
-<section class="sub-page container">
-  <h3>Work In Progress</h3>
-  <hr>
+    <!-- Working Paper 3 -->
+    <article class="paper-item">
+      <p class="paper-title">
+        <strong>
+          The Fall and Rise of Labor: Substitutability and Scalability during
+          the Technological Revolution
+        </strong>
+        <br>
 
-  <p><b>Labor Market Power and Human Capital Accumulation</b><br>
-    with <a href="https://www.tarmangue.com/" target="_blank" rel="noopener noreferrer">Tristany Armangue Jubert</a> and
-    <a href="https://hessjacob.github.io/" target="_blank" rel="noopener noreferrer">Jacob T. Hess</a>
-  </p>
+        with
+        <a
+          href="https://r-santaeulalia.net/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Raül Santaeulàlia-Llopis</a>
+        and
+        <a
+          href="https://kevinhorourke.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Kevin O’Rourke</a>
+      </p>
 
-  <div>
-    <a class="button button-primary" href="slides/labor_market_power_technology.pdf" target="_blank" rel="noopener noreferrer">Slides</a>
-  </div>
-</section>
+      <p class="presented-at">
+        Presented at:
+        <a
+          href="https://grp.cepr.org/events/xi-workshop-structural-transformation-and-macroeconomic-dynamics"
+          target="_blank"
+          rel="noopener noreferrer"
+        >XI Workshop on Structural Transformation and Macroeconomic Dynamics</a>.
+      </p>
 
-<script>
-  document.querySelectorAll(".abstract-btn").forEach(function(button) {
-    button.addEventListener("click", function(event) {
-      event.preventDefault();
-      var targetId = button.getAttribute("data-target");
-      var abstract = document.getElementById(targetId);
-      abstract.style.display = (abstract.style.display === "none") ? "block" : "none";
+      <div class="paper-links">
+        <a
+          class="button button-primary abstract-btn"
+          href="#abstract4"
+          data-target="abstract4"
+          aria-controls="abstract4"
+          aria-expanded="false"
+        >Abstract</a>
+
+        <a
+          class="button button-primary"
+          href="slides/ls_automation_data_sources-19.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Slides</a>
+      </div>
+
+      <div id="abstract4" class="abstract-content" hidden>
+        <p>
+          We study how technological innovations reshaped U.S. labor markets
+          between 1860 and 1950 by combining over 20 million digitized
+          newspaper pages from the Library of Congress with occupational data
+          from the U.S. Census starting in 1860. Using equipment
+          advertisements, we track the arrival of 123 major technologies
+          across time and space and measure local labor-market responses
+          through job ads and shifts in occupational structure. We find that
+          new technologies trigger the rapid decline of some occupations
+          (substitution) and the gradual rise of others (scaling). While
+          short-run disruptions are uneven, the long-run effects are broadly
+          positive: wages, employment, and productivity tend to rise in
+          counties that adapt more quickly to changing labor demand. A
+          half-century later, these counties are richer, have lower
+          unemployment, and more polarized labor markets. Our findings offer
+          historical perspective on modern fears of automation-driven job
+          loss, suggesting that technological disruptions have historically
+          reallocated labor rather than replaced it.
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <!-- Publications -->
+  <section class="sub-page container">
+    <h3>Publications</h3>
+    <hr>
+
+    <article class="paper-item">
+      <p class="paper-title">
+        <strong>
+          Firm Dynamics, Monopsony, and Aggregate Productivity Differences
+        </strong>
+        <br>
+
+        with
+        <a
+          href="https://www.tarmangue.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Tristany Armangue Jubert</a>
+        and
+        <a
+          href="https://www.alessandroruggieri.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Alessandro Ruggieri</a>
+        <br>
+
+        <em>Review of Economic Dynamics</em> (2025), 101321.
+      </p>
+
+      <div class="paper-links">
+        <a
+          class="button button-primary abstract-btn"
+          href="#abstract3"
+          data-target="abstract3"
+          aria-controls="abstract3"
+          aria-expanded="false"
+        >Abstract</a>
+
+        <a
+          class="button button-primary"
+          href="https://www.dropbox.com/scl/fi/mgkft8ctmq21f8osq548r/AJRR_draft-main.pdf?rlkey=0kvkrxwdegvp6ljhv3uvyeg3k&dl=0"
+          target="_blank"
+          rel="noopener noreferrer"
+        >PDF</a>
+
+        <a
+          class="button button-primary"
+          href="slides/dynamic_misallocation_labor_market_power.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Slides</a>
+      </div>
+
+      <div id="abstract3" class="abstract-content" hidden>
+        <p>
+          This paper studies how labor market power affects firm dynamics and
+          aggregate productivity. We build a dynamic model of neoclassical
+          monopsony with occupational choice, firm growth, and
+          productivity-enhancing technology adoption. Labor market power
+          lowers efficiency and leads to aggregate output losses by distorting
+          the allocation of labor, entrepreneurship, and innovation
+          decisions. The model is consistent with cross-country evidence of
+          higher life-cycle firm growth and higher productivity investment in
+          more competitive labor markets and can explain up to 42% of
+          differences in income per capita across countries. We find that
+          about one-third of the losses are attributable to a distorted
+          selection of entrepreneurs and a lack of innovation, suggesting that
+          efficiency losses may be greater than those estimated by previous
+          studies.
+        </p>
+      </div>
+    </article>
+  </section>
+
+  <!-- Work in progress -->
+  <section class="sub-page container">
+    <h3>Work in Progress</h3>
+    <hr>
+
+    <article class="paper-item">
+      <p class="paper-title">
+        <strong>Labor Market Power and Human Capital Accumulation</strong>
+        <br>
+
+        with
+        <a
+          href="https://www.tarmangue.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Tristany Armangue Jubert</a>
+        and
+        <a
+          href="https://hessjacob.github.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Jacob T. Hess</a>
+      </p>
+
+      <div class="paper-links">
+        <a
+          class="button button-primary"
+          href="slides/labor_market_power_technology.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Slides</a>
+      </div>
+    </article>
+  </section>
+
+  <script>
+    document.querySelectorAll(".abstract-btn").forEach(function (button) {
+      button.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        var targetId = button.getAttribute("data-target");
+        var abstract = document.getElementById(targetId);
+        var isOpening = abstract.hidden;
+
+        abstract.hidden = !isOpening;
+        button.setAttribute("aria-expanded", String(isOpening));
+        button.textContent = isOpening ? "Hide Abstract" : "Abstract";
+      });
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
+```
