@@ -1,3 +1,6 @@
+Copy and paste this as your complete `index.html`:
+
+```html
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -9,6 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index, follow">
   <meta http-equiv="content-language" content="en-us">
+  <meta name="author" content="Tancredi Rapone">
 
   <meta
     name="description"
@@ -17,25 +21,21 @@
 
   <meta
     name="keywords"
-    content="Tancredi Rapone,economics,macroeconomics,economic growth,structural transformation,firm dynamics,industrialization,producer services,long-run development,UAB,BSE,Barcelona School of Economics,economics job market"
+    content="Tancredi Rapone, economics, macroeconomics, economic growth, structural transformation, firm dynamics, industrialization, producer services, long-run development, UAB, BSE, Barcelona School of Economics, economics job market"
   >
-
-  <meta name="author" content="Tancredi Rapone">
 
   <!-- Fonts -->
   <link
-    href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800"
     rel="stylesheet"
-    type="text/css"
+    href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800"
   >
 
   <link
-    href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic"
     rel="stylesheet"
-    type="text/css"
+    href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic"
   >
 
-  <!-- Main CSS -->
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="./css/styles.css">
 
   <!-- Favicon -->
@@ -47,38 +47,63 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
   >
 
-  <!-- Homepage layout -->
   <style>
+    /*
+     * Homepage layout
+     *
+     * The photograph occupies 35% of the available space,
+     * leaving a slightly wider column for the text.
+     */
     .home-intro {
       display: flex;
       align-items: flex-start;
-      gap: 50px;
+      gap: 40px;
     }
 
     .home-photo {
-      flex: 0 0 40%;
+      flex: 0 0 35%;
     }
 
     .home-photo img {
+      display: block;
       width: 100%;
       height: auto;
-      display: block;
     }
 
     .home-text {
-      flex: 1;
+      flex: 1 1 0;
+      min-width: 0;
     }
 
+    /*
+     * Prevent inherited content-width rules from making
+     * the text column unnecessarily narrow.
+     */
+    .home-text .entry-content {
+      width: 100%;
+      max-width: none;
+    }
+
+    /* Tablet and mobile layout */
     @media only screen and (max-width: 768px) {
-      .home-intro {
+      .sub-page.container.home-intro {
         display: block;
+        width: 90%;
+        max-width: none;
+        margin-right: auto;
+        margin-left: auto;
       }
 
       .home-photo {
+        width: 100%;
         margin-bottom: 30px;
       }
 
       .home-photo img {
+        width: 100%;
+      }
+
+      .home-text {
         width: 100%;
       }
     }
@@ -98,11 +123,11 @@
     </div>
   </header>
 
-  <!-- Main Navigation -->
+  <!-- Navigation -->
   <section class="container">
-    <nav class="nav">
+    <nav class="nav" aria-label="Main navigation">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="research.html">Research</a></li>
         <li><a href="cv.html">CV</a></li>
         <li><a href="teaching.html">Teaching</a></li>
@@ -111,15 +136,18 @@
     </nav>
   </section>
 
-  <!-- Main Content -->
-  <section class="sub-page container home-intro">
+  <!-- Main content -->
+  <main class="sub-page container home-intro">
 
-    <!-- Photo -->
+    <!-- Photograph -->
     <div class="home-photo">
-      <img src="img/photo_website.jpg" alt="Tancredi Rapone">
+      <img
+        src="img/photo_website.jpg"
+        alt="Portrait of Tancredi Rapone"
+      >
     </div>
 
-    <!-- Text -->
+    <!-- Introduction -->
     <article class="home-text">
       <div class="entry-content" id="info">
 
@@ -159,17 +187,22 @@
         </p>
 
         <p>
-          I am a macroeconomist working on economic growth, structural transformation, firm dynamics, and long-run development. My
+          I am a macroeconomist working on economic growth,
+          structural transformation, firm dynamics, and long-run
+          development. My
           <a
             href="papers/SC_services_paper.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >job market paper</a>
-          studies how large-scale manufacturing builds managerial and technical capabilities that subsequently shape the composition and growth of the service economy that follows.
+          studies how large-scale manufacturing builds managerial and
+          technical capabilities that subsequently shape the composition
+          and growth of the service economy that follows.
         </p>
 
         <p>
-          Outside economics, I am interested in film photography and occasionally share my work on
+          Outside economics, I am interested in film photography and
+          occasionally share my work on
           <a
             href="https://www.lomography.com/homes/tancrepone"
             target="_blank"
@@ -234,7 +267,8 @@
       </div>
     </article>
 
-  </section>
+  </main>
 
 </body>
 </html>
+```
